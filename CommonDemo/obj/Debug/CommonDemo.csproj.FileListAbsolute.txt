@@ -1,0 +1,6 @@
+E:\VS2012 Wokespace\CommonDemo\CommonDemo\bin\Debug\CommonDemo.exe.config
+E:\VS2012 Wokespace\CommonDemo\CommonDemo\bin\Debug\CommonDemo.exe
+E:\VS2012 Wokespace\CommonDemo\CommonDemo\bin\Debug\CommonDemo.pdb
+E:\VS2012 Wokespace\CommonDemo\CommonDemo\obj\Debug\CommonDemo.csprojResolveAssemblyReference.cache
+E:\VS2012 Wokespace\CommonDemo\CommonDemo\obj\Debug\CommonDemo.exe
+E:\VS2012 Wokespace\CommonDemo\CommonDemo\obj\Debug\CommonDemo.pdb
