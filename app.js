@@ -1,3 +1,13 @@
+/*
+
+
+*/
+
+'use stirct'
+
+var greet = require('./module/hello');
+
+
 var express = require('express');
 var app = express();
 
