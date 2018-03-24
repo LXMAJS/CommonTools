@@ -5,13 +5,20 @@
 
 */
 
-'use strict'
+// 'use strict'
 
-var greet = require('./module/hello');
+// var greet = require('./module/hello');
 
-var s = 'lxmajs';
+// var s = 'lxmajs';
 
-// use a function g=from greet
-greet(s);
+// // use a function g=from greet
+// greet(s);
 
+'use strict';
 
+var fs = require('fs');
+
+var rs = fs.createReadStream('sample.txt');
+var ws = fs.createWriteStream('copied.txt');
+
+rs.pipe(ws);
