@@ -1,7 +1,6 @@
-/*
-
-
-*/
+/**
+ * @author : lxmajs
+ */
 
 'use stirct'
 
