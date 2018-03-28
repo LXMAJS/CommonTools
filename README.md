@@ -1,5 +1,3 @@
-# node-demo
-my first demo
+# Kindlepush-Server
 
-this is my first node.js demo
-to record my study road
+this is my wechat mini program's server code.

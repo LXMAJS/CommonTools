@@ -4,38 +4,19 @@
 */
 
 'use stirct'
+// 导入koa，和koa 1.x不同，在koa2中，我们导入的是一个class，因此用大写的Koa表示:
+const Koa = require('koa');
 
-var greet = require('./module/hello');
+// 创建一个Koa对象表示web app本身:
+const app = new Koa();
 
-
-var express = require('express');
-var app = express();
-
-app.set('port', process.env.PORT || 3000);
-
-app.get('/', function (req, res){
-    res.send('Ritsu Yan');
+// 对于任何请求，app将调用该异步函数处理请求：
+app.use(async (ctx, next) => {
+    await next();
+    ctx.response.type = 'text/html';
+    ctx.response.body = '<h1>Hello, koa2!</h1>';
 });
 
-app.get('/about', function (req, res) {
-    res.send('the node course');
-});
-
-app.get('/user', function (req, res) {
-    res.send({
-        'id':'1',
-        'name': 'lijin'
-    });
-});
-
-app.use(function (req, res, next) {
-    res.status(404);
-    res.send('404 -- not found');
-});
-
-var server = app.listen(3000, function() {
-    var host = server.address().address;
-    var port = server.address().port;
-
-    console.log('Example app listening at http://%s:%s', host, port);
-});
+// 在端口3000监听:
+app.listen(3000);
+console.log('app started at port 3000...');

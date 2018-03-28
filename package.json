@@ -1,22 +1,24 @@
 {
-  "name": "ido",
+  "name": "pindlepush-server",
   "version": "1.0.0",
-  "description": "my first demo",
+  "description": "kindlepush-server",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LXMAJS/node-demo.git"
+    "url": "git+https://github.com/LXMAJS/indlepush-server.git"
   },
   "author": "lxmajs",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/LXMAJS/node-demo/issues"
+    "url": "https://github.com/LXMAJS/indlepush-server/issues"
   },
-  "homepage": "https://github.com/LXMAJS/node-demo#readme",
+  "homepage": "https://github.com/LXMAJS/indlepush-server#readme",
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "koa": "^2.5.0"
   }
 }
