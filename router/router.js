@@ -6,7 +6,8 @@
 
 // 注意require('koa-router')返回的是函数:
 var router       = require('koa-router')();
-var sequelize    = require('../db/sequelize');
+var sequelize    = require('../db/db');
+var mailSender   = require('../module/nodemailer/mail');
 
 // add url-route:
 router.get('/hello/:name', async (ctx, next) => {
@@ -16,6 +17,12 @@ router.get('/hello/:name', async (ctx, next) => {
 
 router.get('/', async (ctx, next) => {
     ctx.response.body = '<h1>Index</h1>';
+});
+
+
+router.get('/send', async (ctx, next) => {
+    mailSender.sendMail('lxmajs@163.com', 'Hello', 'Hello world!');
+    ctx.response.body = '<h1>Send OK</h1>';
 });
 
 
