@@ -21,10 +21,10 @@ router.get('/', async (ctx, next) => {
 
 // 添加一本书
 router.get('/addBook', async (ctx, next) => {
-    var newBook = sequelize.addBook({
-        title : 'New Book'
+    sequelize.addBook({
+        title : 'New Book 2'
     });
-    ctx.response.body = newBook;
+    ctx.response.body = 'Created a new book.';
 });
 
 module.exports = router;

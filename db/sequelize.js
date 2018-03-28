@@ -18,10 +18,11 @@ var sequelize = new Sequelize(config.database, config.username, config.password,
 });
 
 // Book 类
-var Book = sequelize.define('Book', {
+var Book = sequelize.define('tbl_book', {
     id: {
         type: Sequelize.BIGINT,
-        primaryKey: true
+        primaryKey: true,
+        autoIncrement : true
     },
     title: Sequelize.STRING(255),
     coverimg_url: Sequelize.STRING(255),
@@ -31,17 +32,19 @@ var Book = sequelize.define('Book', {
     });
 
 // 添加图书
-function addBook(book) {
-    console.log('createing: ' + JSON.stringify(newBook));
+sequelize.addBook = function addBook(book) {
+    console.log('createing: ' + JSON.stringify(book));
     var now = Date.now();
     (async () => {
         var newBook = await Book.create({
-            id: 'd-' + now,
             title: book.title,
             coverimg_url: book.coverimg_url,
             create_time: now
         });
-        console.log('created: ' + JSON.stringify(newBook));
+        if (newBook) {
+            console.log('created: ' + JSON.stringify(newBook));
+            return newBook;
+        }
     })();
 }
 
