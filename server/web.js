@@ -25,10 +25,3 @@ function start() {
 }
 
 module.exports = start;
-
-// // starting ths web
-// if (module.parent) {
-//     start();
-// } else {
-//     module.exports.start = start;
-// }
