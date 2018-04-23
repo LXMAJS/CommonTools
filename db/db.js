@@ -38,15 +38,11 @@ sequelize.defineModel = (name, attributes) => {
         type: ID_TYPE,
         primaryKey: true
     };
-    attrs.createdAt = {
+    attrs.create_time = {
         type: Sequelize.BIGINT,
         allowNull: false
     };
-    attrs.updatedAt = {
-        type: Sequelize.BIGINT,
-        allowNull: false
-    };
-    attrs.version = {
+    attrs.update_time = {
         type: Sequelize.BIGINT,
         allowNull: false
     };
@@ -60,12 +56,10 @@ sequelize.defineModel = (name, attributes) => {
                     if (!obj.id) {
                         obj.id = generateId();
                     }
-                    obj.createdAt = now;
-                    obj.updatedAt = now;
-                    obj.version = 0;
+                    obj.create_time = now;
+                    obj.update_time = now;
                 } else {
-                    obj.updatedAt = Date.now();
-                    obj.version++;
+                    obj.update_time = Date.now();
                 }
             }
         }
