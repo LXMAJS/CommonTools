@@ -26,14 +26,15 @@ smtpTransport = nodemailer.createTransport(smtpTransport({
  * @param {String} subject 发送的主题
  * @param {String} html 发送的html内容
  */
-var sendMail = function (recipient, subject, html) {
+var sendMail = function (recipient, subject, html, attachments) {
 
     smtpTransport.sendMail({
 
         from: config.email.user.mail,
         to: recipient,
         subject: subject,
-        html: html
+        html: html,
+        attachments: attachments
 
     }, function (error, response) {
         if (error) {

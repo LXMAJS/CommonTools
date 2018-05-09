@@ -21,7 +21,7 @@ router.get('/', async (ctx, next) => {
 
 
 router.get('/send', async (ctx, next) => {
-    mailSender('lxmajs@163.com', 'Hello', 'Hello world!');
+    mailSender('lxmajs@163.com', 'Hello', 'Hello world!', [{ filename: 'attach1.sql', path: './kindlepush.sql'}]);
     ctx.response.body = '<h1>Send OK</h1>';
 });
 
