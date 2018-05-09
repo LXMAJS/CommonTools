@@ -16,8 +16,8 @@ var config = require('./config')
 smtpTransport = nodemailer.createTransport(smtpTransport({
     service: config.email.service,
     auth: {
-        user: config.email.user,
-        pass: config.email.pass
+        user: config.email.user.mail,
+        pass: config.email.user.pass
     }
 }));
 
@@ -30,7 +30,7 @@ var sendMail = function (recipient, subject, html) {
 
     smtpTransport.sendMail({
 
-        from: config.email.user,
+        from: config.email.user.mail,
         to: recipient,
         subject: subject,
         html: html
