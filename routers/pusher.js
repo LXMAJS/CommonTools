@@ -5,9 +5,9 @@
 'use stirct'
 
 // 注意require('koa-router')返回的是函数:
-var router       = require('koa-router')();
-var sequelize    = require('../db/db');
-var mailSender   = require('../module/nodemailer/mail');
+const Router       = require('koa-router');
+const sequelize    = require('../db/db');
+const mailSender   = require('../module/nodemailer/mail');
 
 // add url-route:
 router.get('/hello/:name', async (ctx, next) => {

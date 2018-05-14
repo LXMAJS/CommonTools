@@ -6,7 +6,7 @@
 'use stirct'
 
 const Koa    = require('koa');
-const router = require('../router/router');
+const router = require('../routers');
 const app    = new Koa();
 
 // log request URL:
