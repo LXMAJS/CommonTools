@@ -1,0 +1,165 @@
+{
+	"NA": "192",
+	"NB": "3",
+	"TB": {
+		"events": [],
+		"node_info": [{
+			"node_action": "clarify",
+			"node_id": "start1560857359230",
+			"node_name": "开始",
+			"node_resp_data": "",
+			"node_type": "start",
+			"slot_node_next": [{
+				"node_id": "start1560857359230",
+				"requirements": [{
+					"collect_condition": "0"
+				}]
+			}]
+		}, {
+			"event_id": [705],
+			"ifGlobal": "false",
+			"node_action": "clarify",
+			"node_answer": [{
+				"clarify": "[\"你好，这里是民生银行信用卡中心，请问你是张三先生吗？\"]",
+				"sets": []
+			}, {
+				"clarify": "[\"请问你是张三先生吗？\"]",
+				"sets": []
+			}, {
+				"clarify": "[\"抱歉，这边听不大清，请问您是张三先生吗？\"]",
+				"sets": []
+			}],
+			"node_id": "[normal]e1560857407721",
+			"node_name": "开头语",
+			"node_resp_data": {
+				"keyboard": "0",
+				"keyboard_length": "5",
+				"keyboard_break": "1"
+			},
+			"node_slot_info": [],
+			"node_type": "common",
+			"process_intent_answers": [{
+				"answer": "",
+				"intent_id": "259",
+				"intent_type": "1",
+				"sets": []
+			}, {
+				"intent_id": "277",
+				"intent_type": "1",
+				"sets": []
+			}],
+			"slot_node_next": [{
+				"node_id": "[normal]e1560857407721",
+				"requirements": [{
+					"collect_condition": "3",
+					"node_condition_value": "259",
+					"operator": "match",
+					"target_id": "",
+					"target_info": ""
+				}]
+			}, {
+				"node_id": "[normal]e1560857407721",
+				"requirements": [{
+					"collect_condition": "0",
+					"node_condition_value": "",
+					"operator": "",
+					"target_id": "",
+					"target_info": ""
+				}]
+			}],
+			"slot_reject_answer": []
+		}, {
+			"event_id": [709],
+			"ifGlobal": "false",
+			"node_action": "clarify",
+			"node_answer": [{
+				"clarify": "[\"您好，你在信用卡中心的欠款已经延期了，请问今晚八点前可以还清吗？\"]",
+				"sets": []
+			}, {
+				"clarify": "[\"请问今晚八点前可以还清吗？\"]",
+				"sets": []
+			}, {
+				"clarify": "[\"抱歉，请问您今晚八点前可以还清吗？\"]",
+				"sets": []
+			}],
+			"node_id": "[normal]e1560857991352",
+			"node_name": "阐明意图",
+			"node_resp_data": {
+				"keyboard": "0",
+				"keyboard_length": "5",
+				"keyboard_break": "1"
+			},
+			"node_slot_info": [],
+			"node_type": "common",
+			"process_intent_answers": [{
+				"answer": "",
+				"intent_id": "259",
+				"intent_type": "1",
+				"sets": []
+			}, {
+				"intent_id": "277",
+				"intent_type": "1",
+				"sets": []
+			}],
+			"slot_node_next": [{
+				"node_id": "[normal]e1560857991352",
+				"requirements": [{
+					"collect_condition": "3",
+					"node_condition_value": "259",
+					"operator": "match",
+					"target_id": "",
+					"target_info": ""
+				}]
+			}],
+			"slot_reject_answer": []
+		}],
+		"not_necessary": [],
+		"scene_id": "192",
+		"scene_name": "联调场景",
+		"slot_info": [],
+		"task_answer": {
+			"[hangup]e1560860082578": {
+				"event_id": [710],
+				"node_name": "挂机_非本人",
+				"process_intent_answers": [{
+					"answer": "",
+					"intent_id": "259",
+					"intent_type": "1",
+					"sets": []
+				}, {
+					"intent_id": "277",
+					"intent_type": "1",
+					"sets": []
+				}],
+				"respData": {},
+				"text": {
+					"answer": "[\"很抱歉打扰到您了，再见\"]",
+					"sets": []
+				}
+			},
+			"[hangup]e1560860018660": {
+				"event_id": [711],
+				"node_name": "挂机_承诺还款",
+				"process_intent_answers": [{
+					"answer": "",
+					"intent_id": "259",
+					"intent_type": "1",
+					"sets": []
+				}, {
+					"intent_id": "277",
+					"intent_type": "1",
+					"sets": []
+				}],
+				"respData": {},
+				"text": {
+					"answer": "[\"感谢您的配合，我们将在今晚8点进行查账，这边就不打扰您了，再见\"]",
+					"sets": []
+				}
+			}
+		},
+		"task_id": "192",
+		"task_name": "联调场景"
+	},
+	"TF": "",
+	"TG": "[]"
+}
